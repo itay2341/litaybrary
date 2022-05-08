@@ -1,0 +1,148 @@
+{% extends "admin.html" %}
+{% block title %}Types{% endblock %}
+
+<!-- Content -->
+{% block content %}
+<h1 class="display-3 py-2 text-center">My types</h1>
+<p class="important">
+<h5 class="display-7 py-2 text-center">{{x}}</h5>
+
+<div class="container">
+  <div class="accordion accordion-flush shadow" id="accordionFlushExample">
+    <div class="accordion-item border">
+      <h2 class="accordion-header" id="flush-headingOne">
+        <button class="accordion-button collapsed border" type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+          Add type
+        </button>
+      </h2>
+      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+        data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <form class="row g-3" action="/admin/types" method="POST">
+            <div class="col-md-4">
+              <label for="validationServer01" class="form-label">days_to_loan</label>
+              <input type="number" name="days_to_loan" class="form-control is-valid" id="validationServer01" value="10"
+                required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="validationServer02" class="form-label">fee_per_day</label>
+              <input type="number" name="fee_per_day" class="form-control is-valid" id="validationServer02" value="30"
+                required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit">Add</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <h2 class="accordion-header" id="flush-headingTwo">
+      <button class="accordion-button collapsed border" type="button" data-bs-toggle="collapse"
+        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+        Update active
+      </button>
+    </h2>
+    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+      data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        <form class="row g-3" action="/admin/types" method="POST">
+          <div class="col-md-4">
+            <label for="validationServer01" class="form-label">type_id</label>
+            <input type="number" name="type_id" class="form-control is-valid" id="validationServer01" value="1"
+              required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationServer02" class="form-label">status</label>
+            <input type="number" name="active" class="form-control is-valid" id="validationServer02" value="1" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit">Update</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="accordion-item border">
+      <h2 class="accordion-header" id="flush-headingThree">
+        <button class="accordion-button collapsed border" type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+          Show all
+        </button>
+      </h2>
+      <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+        data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <strong>All Types</strong><br>
+          <table class="table pb-4 text-center table-striped table-hover">
+            <thead class="text-center">
+              <tr>
+                <th>#</th>
+                <th>days_to_loan</th>
+                <th>fee_per_day</th>
+                <th>status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for c in types %}
+              <tr>
+                <td>{{c[0]}}</td>
+                <td>{{c[1]}}</td>
+                <td>{{c[2]}}</td>
+                <td class="text-center">{{c[3]}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item border">
+      <h2 class="accordion-header" id="flush-headingFour">
+        <button class="accordion-button collapsed border" type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+          Show only active
+        </button>
+      </h2>
+      <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+        data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <strong>Active customers</strong><br>
+          <table class="table pb-4 text-center table-striped table-hover">
+            <thead class="text-center">
+              <tr>
+                <th>#</th>
+                <th>days_to_loan</th>
+                <th>fee_per_day</th>
+                <th>status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for c in types2 %}
+              <tr>
+                <td>{{c[0]}}</td>
+                <td>{{c[1]}}</td>
+                <td>{{c[2]}}</td>
+                <td class="text-center">{{c[3]}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br><br>
+{% endblock %}

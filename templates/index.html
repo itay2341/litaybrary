@@ -1,0 +1,391 @@
+{% extends "layout.html" %}
+
+<!-- Head -->
+{% block head %}
+{{ super() }}
+<style>
+  .color23 {
+    color: rgb(165, 161, 42) !important;
+  }
+
+  .color11 {
+    color: brown !important;
+  }
+
+  .bg23 {
+    background: rgb(165, 128, 42) !important;
+    font-size: 2em !important;
+
+  }
+  
+
+
+  .fade2 {
+    background: brown !important;
+  }
+
+  .fade1 {
+    background: brown !important;
+    color: rgb(87, 4, 4) !important;
+  }
+
+  .login222 {
+    font-size: 16px !important;
+    padding-left: 200px !important ;
+  }
+  @media (max-width:500px){
+.st{
+  height: 600px;
+  width: 600px;
+}
+.st2{
+  font-size: 1.5em !important ;
+}
+.st3{
+  font-size: 0.8em !important ;
+  width: 370px !important ;
+}
+  }
+
+</style>
+{% endblock %}
+
+<!-- Content -->
+{% block content %}
+
+<!-- Spinner -->
+<div id="spinner"
+  class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+  <div class="spinner-border " style="width: 3rem; height: 3rem; color: brown;" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<!-- Carousel -->
+<div class="container-fluid p-0 mb-5">
+  <div class="owl-carousel header-carousel position-relative">
+    <div class="owl-carousel-item position-relative st">
+      <img class="img-fluid" src="/static/img/carousel-1.jpg" alt="">
+      <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
+        style="background: rgba(24, 29, 56, .7);">
+        <div class="container">
+          <div class="row justify-content-start">
+            <div class="col-sm-10 col-lg-8">
+              <h5 class=" text-uppercase mb-3 animated slideInDown color23">Best Online Courses</h5>
+              <h1 class="display-3 text-white animated slideInDown st2">The Best Online Learning Platform</h1>
+              <p class="fs-5 text-white mb-4 pb-2 st3">We won't stop moving forward.<br> We'll keep renewing our products and
+                welcome people.</p>
+              <a href="#down" class="btn bg23 py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+              <a href="/signup" class="btn brown py-md-3 px-md-5 animated slideInRight" style="font-size: 2em;">Join
+                Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="owl-carousel-item position-relative st">
+      <img class="img-fluid" src="/static/img/carousel-2.jpg" alt="">
+      <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
+        style="background: rgba(24, 29, 56, .7);">
+        <div class="container">
+          <div class="row justify-content-start">
+            <div class="col-sm-10 col-lg-8">
+              <h5 class="color23 text-uppercase mb-3 animated slideInDown color23">Best Online Courses</h5>
+              <h1 class="display-3 text-white animated slideInDown st2">Get Educated From Your Home</h1>
+              <p class="fs-5 text-white mb-4 pb-2 st3">We won't stop moving forward.<br> We'll keep renewing our products and
+                welcome people.</p>
+              <a href="#down" class="btn bg23 py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+              <a href="/signup" class="btn brown py-md-3 px-md-5 animated slideInRight" style="font-size: 2em;">Join
+                Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Service -->
+<div class="container-xxl py-5">
+  <div class="container" id="down">
+    <div class="row g-4">
+      <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="service-item text-center pt-3 fade2">
+          <div class="p-4 ">
+            <i class="fa fa-3x fa-graduation-cap mb-4 fade1"></i>
+            <h5 class="mb-3">Skilled Instructors</h5>
+            <p>You'll receive learning skills and knowledge that cannot be obtained elsewhere!</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="service-item text-center pt-3 fade2">
+          <div class="p-4">
+            <i class="fa fa-3x fa-globe mb-4 fade1"></i>
+            <h5 class="mb-3">Online Reading</h5>
+            <p>Anywhere. Anytime.<br>You just need an internet connection.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="service-item text-center pt-3 fade2">
+          <div class="p-4">
+            <i class="fa fa-3x fa-home mb-4 fade1"></i>
+            <h5 class="mb-3">Home Projects</h5>
+            <p>Since you joined us you'll be exposed to all our company procets! </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+        <div class="service-item text-center pt-3 fade2">
+          <div class="p-4">
+            <i class="fa fa-3x fa-book-open mb-4 fade1"></i>
+            <h5 class="mb-3">Book Library</h5>
+            <p>At the library you'll find thousands of books you have never seen before!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- About -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+        <div class="position-relative h-100">
+          <img class="img-fluid position-absolute w-100 h-100" src="/static/img/about.jpg" alt=""
+            style="object-fit: cover;">
+        </div>
+      </div>
+      <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+        <h6 class="pe-3 color11">About Us</h6>
+        <h1 class="mb-4">Welcome to Litaybrary</h1>
+        <p class="mb-4">Our library is created to be able to help people find there issues and learn some stuff.</p>
+        <p class="mb-4">We beleve in pluralism and that we all have different thoughts.<br> Get ready to dive into our
+          intresting books. </p>
+        <div class="row gy-2 gx-4 mb-4">
+          <div class="col-sm-6">
+            <p class="mb-0"><i class="fa fa-arrow-right color11 me-2"></i>Skilled Instructors</p>
+          </div>
+          <div class="col-sm-6">
+            <p class="mb-0"><i class="fa fa-arrow-right color11 me-2"></i>Online Classes</p>
+          </div>
+          <div class="col-sm-6">
+            <p class="mb-0"><i class="fa fa-arrow-right color11 me-2"></i>International Certificate</p>
+          </div>
+          <div class="col-sm-6">
+            <p class="mb-0"><i class="fa fa-arrow-right color11 me-2"></i>Home Projects</p>
+          </div>
+          <div class="col-sm-6">
+            <p class="mb-0"><i class="fa fa-arrow-right color11 me-2"></i>Crazy Books</p>
+          </div>
+          <div class="col-sm-6">
+            <p class="mb-0"><i class="fa fa-arrow-right color11 me-2"></i>Crazy Library</p>
+          </div>
+        </div>
+        <a class=" color11 bold py-3 px-5 " href="/about">Read More</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Categories -->
+<div class="container-xxl py-5 category">
+  <div class="container">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h1 class="mb-5">Books Categories</h1>
+    </div>
+    <div class="row g-3">
+      <div class="col-lg-7 col-md-6">
+        <div class="row g-3">
+          <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
+            <a class="position-relative d-block overflow-hidden">
+              <img class="img-fluid" src="/static/img/cat-1.jpg" alt="">
+              <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+                <h5 class="m-0 color11">Nostalgic</h5>
+                <small class="color11">49 Books</small>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
+            <a class="position-relative d-block overflow-hidden">
+              <img class="img-fluid"
+                src="https://newint.org/sites/default/files/features/2016/09/20/01.10.2016-world-fiction-special-590.jpg"
+                width="600px" height="600px" alt="">
+              <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+                <h5 class="m-0 color11">Fiction</h5>
+                <small class="color11">122 Books</small>
+              </div>
+            </a>
+          </div>
+          <a class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
+            <div class="position-relative d-block overflow-hidden">
+              <img class="img-fluid"
+              src="https://imgix.theurbanlist.com/content/article/a_list_images/Cookbooks.jpg?auto=format,compress&w=520&h=390&fit=crop"
+
+                width="800px" height="800px" alt="">
+              <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+                <h5 class="m-0 color11">Food</h5>
+                <small class="color11">80 Books</small>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
+        <a class="position-relative d-block h-100 overflow-hidden">
+          <img class="img-fluid position-absolute w-100 h-100" src="/static/img/cat-4.jpg" alt=""
+            style="object-fit: cover;">
+          <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin:  1px;">
+            <h5 class="m-0 color11">Nonfiction</h5>
+            <small class="color11">245 Books</small>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Books -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h1 class="mb-5">Popular Books</h1>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="course-item bg-light">
+          <div class="position-relative overflow-hidden">
+            <img class="img-fluid" src="/static/imgx" alt="">
+            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+            </div>
+          </div>
+          <div class="text-center p-4 pb-0">
+            <h5 class="mb-4">THE LIGHT WE CANNOT SEE</h5>
+            <div class="mb-3">
+              <small class="fa fa-star color11"></small>
+              <small class="fa fa-star color11"></small>
+              <small class="fa fa-star color11"></small>
+              <small class="fa fa-star color11"></small>
+              <small class="fa fa-star color11"></small>
+              <small>(123)</small>
+            </div>
+          </div>
+          <div class="d-flex border-top">
+            <small class="flex-fill text-center border-end py-2"><i
+                class="fa fa-user-tie color11 me-2"></i>Anthony</small>
+            <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock color11 me-2"></i>2.15
+              Hrs</small>
+            <small class="flex-fill text-center py-2"><i class="fa fa-user color11 me-2"></i>140 Loans</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="course-item bg-light">
+          <div class="position-relative overflow-hidden">
+            <img class="img-fluid"
+              src="https://edge.curalate.com/v1/img/ftwNToeQZw-z3w7IGHJyKIszQDh76-gD9UpSTiAjL2c=/sc/1080x1080?compression=0.85&fit=crop"
+              alt="">
+            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+            </div>
+          </div>
+          <div class="text-center p-4 pb-0">
+            <h5 class="mb-4">PEOPLE WE MEET ON VACATION</h5>
+            <div class="mb-3">
+              <small class="fa fa-star color11"></small>
+              <small class="fa fa-star color11"></small>
+              <small class="fa fa-star color11"></small>
+              <small class="fa fa-star color11"></small>
+              <small class="fa fa-star color11"></small>
+              <small>(148)</small>
+            </div>
+          </div>
+          <div class="d-flex border-top">
+            <small class="flex-fill text-center border-end py-2"><i
+                class="fa fa-user-tie color11 me-2"></i>Emily</small>
+            <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock color11 me-2"></i>0.23
+              Hrs</small>
+            <small class="flex-fill text-center py-2"><i class="fa fa-user color11 me-2"></i>161 Loans</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="course-item bg-light">
+          <div class="position-relative overflow-hidden">
+            <img class="img-fluid" src="/static/imgy.jpg" alt="">
+            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+            </div>
+          </div>
+          <div class="text-center p-4 pb-0">
+            <h5 class="mb-4">SHERLOCK HOLMES</h5>
+            <div class="mb-3">
+              <small class="fa fa-star color11"></small>
+              <small class="fa fa-star color11"></small>
+              <small class="fa fa-star color11"></small>
+              <small class="fa fa-star color11"></small>
+              <small class="fa fa-star color11"></small>
+              <small>(92)</small>
+            </div>
+          </div>
+          <div class="d-flex border-top">
+            <small class="flex-fill text-center border-end py-2"><i
+                class="fa fa-user-tie color11 me-2"></i>Arthur</small>
+            <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock color11 me-2"></i>1.49
+              Hrs</small>
+            <small class="flex-fill text-center py-2"><i class="fa fa-user color11 me-2"></i>112 Loans</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Testimonial -->
+<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+  <div class="container">
+    <div class="text-center">
+      <h1 class="mb-5">Our Students Say!</h1>
+    </div>
+    <div class="owl-carousel testimonial-carousel position-relative">
+      <div class="testimonial-item text-center ">
+        <img class="border rounded-circle p-2 mx-auto mb-3" src="/static/img/testimonial-1.jpg"
+          style="width: 80px; height: 80px;">
+        <h5 class="mb-0">Dana</h5>
+        <p>Student</p>
+        <div class="testimonial-text bg-light text-center p-4">
+          <p class="mb-0">I must say that this library has changed my life. So much to learn, so many options...</p>
+        </div>
+      </div>
+      <div class="testimonial-item text-center">
+        <img class="border rounded-circle p-2 mx-auto mb-3" src="/static/img/testimonial-2.jpg"
+          style="width: 80px; height: 80px;">
+        <h5 class="mb-0">Dani</h5>
+        <p>Designer</p>
+        <div class="testimonial-text bg-light text-center p-4">
+          <p class="mb-0">I didn't except this high level.<br>I can't stop reading their books...</p>
+        </div>
+      </div>
+      <div class="testimonial-item text-center">
+        <img class="border rounded-circle p-2 mx-auto mb-3" src="/static/img/testimonial-3.jpg"
+          style="width: 80px; height: 80px;">
+        <h5 class="mb-0">Moses</h5>
+        <p>Happy dad</p>
+        <div class="testimonial-text bg-light text-center p-4">
+          <p class="mb-0">I'm really reccomend this library. Amazing books and amazing people.</p>
+        </div>
+      </div>
+      <div class="testimonial-item text-center">
+        <img class="border rounded-circle p-2 mx-auto mb-3" src="/static/img/testimonial-4.jpg"
+          style="width: 80px; height: 80px;">
+        <h5 class="mb-0">Noa</h5>
+        <p>Baker</p>
+        <div class="testimonial-text bg-light text-center p-4">
+          <p class="mb-0">Since I have tried I can't stop! So cool library and so empowering.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

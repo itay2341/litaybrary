@@ -1,0 +1,252 @@
+{% extends "layout.html" %}
+{% block title %}About{% endblock %}
+
+<!-- Head -->
+{% block head %}
+{{ super() }}
+<style>
+  .color23 {
+    color: rgb(165, 161, 42) !important;
+  }
+
+  .color11 {
+    color: brown !important;
+  }
+
+  .bg23 {
+    background: rgb(165, 128, 42) !important;
+    font-size: 2em !important;
+
+  }
+
+  .bg12 {
+    background: rgb(188, 5, 5) !important;
+    font-size: 2em !important;
+
+  }
+
+  .fade2 {
+    background: brown !important;
+  }
+
+  .fade1 {
+    background: brown !important;
+    color: rgb(87, 4, 4) !important;
+  }
+
+  .login222 {
+    font-size: 16px !important;
+    padding-left: 200px !important;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Spinner Start -->
+<div id="spinner"
+  class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+  <div class="spinner-border " style="width: 3rem; height: 3rem; color: brown;" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<!-- Header Start -->
+<div class="container-fluid bg-primary py-5 mb-5 page-header ">
+  <div class="container py-5 ">
+    <div class="row justify-content-center ">
+      <div class="col-lg-10 text-center ">
+        <h1 class="display-3 text-white animated slideInDown">About Us</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-center brown">
+            <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
+            <li class="breadcrumb-item"><a class="text-white">Pages</a></li>
+            <li class="breadcrumb-item text-white active" aria-current="page">About</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Service Start -->
+<div class="container-xxl py-5">
+  <div class="container" id="down">
+    <div class="row g-4">
+      <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="service-item text-center pt-3 fade2">
+          <div class="p-4 ">
+            <i class="fa fa-3x fa-graduation-cap mb-4 fade1"></i>
+            <h5 class="mb-3">Skilled Instructors</h5>
+            <p>You'll receive learning skills and knowledge that cannot be obtained elsewhere!</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="service-item text-center pt-3 fade2">
+          <div class="p-4">
+            <i class="fa fa-3x fa-globe mb-4 fade1"></i>
+            <h5 class="mb-3">Online Reading</h5>
+            <p>Anywhere. Anytime.<br>You just need an internet connection.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="service-item text-center pt-3 fade2">
+          <div class="p-4">
+            <i class="fa fa-3x fa-home mb-4 fade1"></i>
+            <h5 class="mb-3">Home Projects</h5>
+            <p>Since you joined us you'll be exposed to all our company procets! </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+        <div class="service-item text-center pt-3 fade2">
+          <div class="p-4">
+            <i class="fa fa-3x fa-book-open mb-4 fade1"></i>
+            <h5 class="mb-3">Book Library</h5>
+            <p>At the library you'll find thousands of books you have never seen before!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- About Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+        <div class="position-relative h-100">
+          <img class="img-fluid position-absolute w-100 h-100" src="/static/imim.png" alt="" style="object-fit: cover;">
+        </div>
+      </div>
+      <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+        <h6 class="pe-3 color11">About Us</h6>
+        <h1 class="mb-4">Welcome to Litaybrary</h1>
+        <p class="mb-4">Our library is created to be able to help people find there issues and learn some stuff.</p>
+        <p class="mb-4">We beleve in pluralism and that we all have different thoughts.<br> Get ready to dive into our
+          intresting books. </p>
+        <div class="row gy-2 gx-4 mb-4">
+          <div class="col-sm-6">
+            <p class="mb-0"><i class="fa fa-arrow-right color11 me-2"></i>Skilled Instructors</p>
+          </div>
+          <div class="col-sm-6">
+            <p class="mb-0"><i class="fa fa-arrow-right color11 me-2"></i>Online Classes</p>
+          </div>
+          <div class="col-sm-6">
+            <p class="mb-0"><i class="fa fa-arrow-right color11 me-2"></i>International Certificate</p>
+          </div>
+          <div class="col-sm-6">
+            <p class="mb-0"><i class="fa fa-arrow-right color11 me-2"></i>Home Projects</p>
+          </div>
+          <div class="col-sm-6">
+            <p class="mb-0"><i class="fa fa-arrow-right color11 me-2"></i>Crazy Books</p>
+          </div>
+          <div class="col-sm-6">
+            <p class="mb-0"><i class="fa fa-arrow-right color11 me-2"></i>Crazy Library</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Team Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h1 class="mb-5">Expert Instructors</h1>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="team-item bg-light">
+          <div class="overflow-hidden">
+            <img class="img-fluid" src="/static/img/team-1.jpg" alt="">
+          </div>
+          <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+            <div class="bg-light d-flex justify-content-center pt-2 px-1">
+              <a class="btn btn-sm-square btn-primary mx-1 brown" style="border: brown;" href=""><i
+                  class="fab fa-facebook-f"></i></a>
+              <a class="btn btn-sm-square btn-primary mx-1 brown" style="border: brown;" href=""><i
+                  class="fab fa-twitter"></i></a>
+              <a class="btn btn-sm-square btn-primary mx-1 brown" style="border: brown;" href=""><i
+                  class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="text-center p-4">
+            <h5 class="mb-0">Moses</h5>
+            <small>Designer</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="team-item bg-light">
+          <div class="overflow-hidden">
+            <img class="img-fluid" src="/static/img/team-2.jpg" alt="">
+          </div>
+          <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+            <div class="bg-light d-flex justify-content-center pt-2 px-1">
+              <a class="btn btn-sm-square btn-primary mx-1 brown" style="border: brown;" href=""><i
+                  class="fab fa-facebook-f"></i></a>
+              <a class="btn btn-sm-square btn-primary mx-1 brown" style="border: brown;" href=""><i
+                  class="fab fa-twitter"></i></a>
+              <a class="btn btn-sm-square btn-primary mx-1 brown" style="border: brown;" href=""><i
+                  class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="text-center p-4">
+            <h5 class="mb-0">Noa</h5>
+            <small>Teacher</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="team-item bg-light">
+          <div class="overflow-hidden">
+            <img class="img-fluid" src="/static/img/team-3.jpg" alt="">
+          </div>
+          <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+            <div class="bg-light d-flex justify-content-center pt-2 px-1">
+              <a class="btn btn-sm-square btn-primary mx-1 brown" style="border: brown;" href=""><i
+                  class="fab fa-facebook-f"></i></a>
+              <a class="btn btn-sm-square btn-primary mx-1 brown" style="border: brown;" href=""><i
+                  class="fab fa-twitter"></i></a>
+              <a class="btn btn-sm-square btn-primary mx-1 brown" style="border: brown;" href=""><i
+                  class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="text-center p-4">
+            <h5 class="mb-0">Horhe</h5>
+            <small>Professor</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+        <div class="team-item bg-light">
+          <div class="overflow-hidden">
+            <img class="img-fluid" src="/static/img/team-4.jpg" alt="">
+          </div>
+          <div class="position-relative d-flex justify-content-center " style="margin-top: -23px;">
+            <div class="bg-light d-flex justify-content-center pt-2 px-1 ">
+              <a class="btn btn-sm-square btn-primary mx-1 brown" style="border: brown;" href=""><i
+                  class="fab fa-facebook-f "></i></a>
+              <a class="btn btn-sm-square btn-primary mx-1 brown" style="border: brown;" href=""><i
+                  class="fab fa-twitter"></i></a>
+              <a class="btn btn-sm-square btn-primary mx-1 brown" style="border: brown;" href=""><i
+                  class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="text-center p-4">
+            <h5 class="mb-0">Ravit</h5>
+            <small>Online Help</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg bg12 center back-to-top"><i class="bi bi-arrow-up text-center"></i></a>
+{% endblock %}

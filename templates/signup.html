@@ -1,0 +1,132 @@
+{% extends "layout.html" %}
+{% block title %}Sign-Up{% endblock %}
+
+<!-- Head -->
+{% block head %}
+{{ super() }}
+<style type="text/css">
+  .important {
+    color: #b65d14;
+  }
+
+  .color2341 {
+    background-color: rgb(207, 148, 75) !important;
+  }
+
+  .color3 {
+    background-color: rgb(220, 176, 93) !important;
+  }
+
+  .color6 {
+    background-color: #cc7e3e !important;
+  }
+
+  .text3 {
+    font-style: oblique !important;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+
+  }
+
+  .text2 {
+    font-style: oblique !important;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+  }
+
+
+  .login22 {
+    font-size: 1.3em !important;
+    padding-top: 20px !important;
+  }
+
+  .c {
+    color: rgb(129, 65, 65) !important;
+  }
+
+  .c2 {
+    color: rgb(164, 36, 36) !important;
+  }
+</style>
+{% endblock %}
+
+<!-- Content -->
+{% block content %}
+
+<!-- Spinner Start -->
+<div id="spinner"
+  class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+  <div class="spinner-border " style="width: 3rem; height: 3rem; color: brown;" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<div class="container colorc3">
+  <h4 class="display-4 text-center pt-3 s">We're here to let you explore new worlds</h4><br><br><br>
+  <div class="text-md-start ">
+    <h3 class="pb-3 text3">Join us to the trip for 30 ILS per month and be part of Litaybrary's Community</h3>
+  </div>
+</div>
+
+<div class="container color2341">
+  <div class="d-flex py-5 justify-md-content-start justify-content-center ">
+    <form class="row  g-3 col-md-12 col-10" action="/user/welcome" method="POST">
+      <div class="col-md-4">
+        <label for="validationServer01" class="form-label">Full name</label>
+        <input type="text" name="name" class="form-control is-valid" id="validationServer01" value="itay groer"
+          required>
+        <div class="valid-feedback c">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="validationServer02" class="form-label">City</label>
+        <input type="text" name="city" class="form-control is-valid" id="validationServer02" value="holon" required>
+        <div class="valid-feedback c">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label class="form-label" for="validationServer05">Date Of Birth</label>
+        <input type="date" name="date_of_birth" class="form-control is-invalid" id="validationServer05"
+          aria-describedby="validationServer05Feedback" max="{{year}}-{{month}}-{{day}}" required>
+        <div id="validationServer05Feedback" class="invalid-feedback c2">
+          Please provide a valid date.
+        </div>
+      </div>
+      <div class="col-md-4 ">
+        <label for="validationServer03" class="form-label">Password</label>
+        <input type="password" name="password" class="form-control is-invalid" id="validationServer03"
+          aria-describedby="validationServer03Feedback" required>
+        <div id="validationServer03Feedback" class="invalid-feedback c2">
+          Please provide a valid password.
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="validationServerUsername" class="form-label">Email</label>
+        <div class="input-group has-validation">
+          <span class="input-group-text" id="inputGroupPrepend3">@</span>
+          <input type="email" name="email" class="form-control is-invalid" id="validationServerUsername"
+            aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+          <div id="validationServerUsernameFeedback" class="invalid-feedback c2">
+            Please fill your email.
+          </div>
+        </div>
+      </div>
+      <div class="col-12 pt-2">
+        <div class="form-check">
+          <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3"
+            aria-describedby="invalidCheck3Feedback" required>
+          <label class="form-check-label c2" for="invalidCheck3">
+            Agree to terms and conditions
+          </label>
+          <div id="invalidCheck3Feedback" class="invalid-feedback c2">
+            You must agree before submitting.
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <button class="btn btn-lg brown py-3" style="color: black;" type="submit">Sign up</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

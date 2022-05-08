@@ -1,0 +1,355 @@
+{% extends "welcome.html" %}
+{% block title %}Books{% endblock %}
+
+<!-- Head -->
+{% block head %}
+{{ super() }}
+<style>
+    .h {
+        width: 300px;
+    }
+
+    .h:hover {
+        background: rgb(190, 190, 190);
+        transition: 800ms;
+        transform: scale(0.95);
+    }
+
+
+    .b {
+        border-radius: 15px 0 0 15px;
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        min-height: 300px;
+        width: 100%;
+    }
+
+    @media screen and (max-width:800px) {
+        .b {
+            border-radius: 15px;
+            min-height: 300px;
+
+        }
+
+        .h {
+            width: 200px;
+        }
+
+        .dropd {
+            padding: 10px !important;
+
+        }
+
+        .dropLink {
+            font-size: 1.15;
+            font-weight: 700;
+
+        }
+
+        .mysticky {
+
+            position: sticky !important;
+            top: 0 !important;
+            z-index: 99;
+
+        }
+
+        .bg-drop {
+            border: rgb(165, 42, 42) solid 2px;
+        }
+
+    }
+
+    .colorr {
+        background-color: rgb(204, 94, 25) !important;
+    }
+
+    .colorrr {
+        font-style: oblique !important;
+        font-display: inherit !important;
+    }
+
+    .gradient {
+        background: linear-gradient(to right,
+                rgb(194, 105, 64) 20%,
+                rgb(220, 130, 80) 20%,
+                rgb(194, 105, 64) 40%,
+                rgb(220, 130, 80) 40%,
+                rgb(194, 105, 64) 60%,
+                rgb(220, 130, 80) 60%,
+                rgb(194, 105, 64) 80%,
+                rgb(220, 130, 80) 80%,
+                rgb(194, 105, 64) 100%);
+    }
+
+    .gradient2 {
+        background: linear-gradient(to right,
+                rgb(194, 105, 64) 20%,
+                rgb(220, 130, 80) 20%,
+                rgb(240, 105, 64) 40%,
+                rgb(220, 130, 80) 40%,
+                rgb(194, 105, 64) 60%,
+                rgb(220, 130, 80) 60%,
+                rgb(194, 105, 64) 80%,
+                rgb(220, 130, 80) 80%,
+                rgb(194, 105, 64) 100%);
+    }
+
+    .gradient3 {
+        background: linear-gradient(to right,
+
+                rgb(220, 130, 80) 20%,
+                rgb(240, 105, 64) 40%);
+    }
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+    }
+
+    .price {
+        color: grey;
+        font-size: 22px;
+    }
+
+    .card button {
+        border: none;
+        outline: 0;
+        padding: 12px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .card button:hover {
+        opacity: 0.7;
+    }
+
+    .bb {
+        border-color: brown !important;
+        background-attachment: white !important;
+        background: brown;
+
+    }
+
+    @media (max-width:500px) {
+        .itix {
+            padding: 40px !important;
+            padding-bottom: 40px !important;
+            max-width: 200px !important;
+            width: 300px !important;
+            height: 100px !important;
+            margin-bottom: 400px !important;
+        }
+
+    }
+</style>
+{% endblock %}
+
+<!-- Search control for phones -->
+{% block search %}
+<li class="nav-item d-block d-md-none">
+    <form class="d-flex flex-column col-12 p-md-0" action="/user/search" method="post">
+        <div class="d-flex ">
+            <div class="form-check pe-3 pt-2 col-6">
+                <input class="form-check-input" type="radio" name="x" id="gridRadios1" value="name" checked>
+                <label class="form-check-label" for="gridRadios1">
+                    Name
+                </label>
+            </div>
+
+            <div class="form-check pe-1 pt-2 col-6">
+                <input class="form-check-input" type="radio" name="x" id="gridRadios2" value="author">
+                <label class="form-check-label" for="gridRadios2">
+                    Author
+                </label>
+            </div>
+        </div>
+        <div class="d-flex pt-2">
+            <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+            <input class="form-control me-2" name="input" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-danger" type="submit">Search</button>
+        </div>
+    </form>
+</li>
+{% endblock %}
+
+<!-- A Class -->
+{% block yarin %}mysticky{% endblock %}
+
+<!-- Drop-Down for phones -->
+{% block drop %}
+<li class="nav-item dropdown d-block d-md-none">
+    <a class="nav-link dropdown-toggle dropLink mx-auto text-white" href="#" id="navbarDropdown" role="button"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        Categories
+    </a>
+    <ul class="dropdown-menu bg-drop bg-dark " aria-labelledby="navbarDropdown">
+        <li>
+            <form method="post" action="/user/books" class="dropd">
+                <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+                <button class="btn-nav" type="submit">
+                    All
+                </button>
+            </form>
+        </li>
+        <li>
+            <form method="post" action="/user/category" class="dropd">
+                <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+                <button class="btn-nav" type="submit" name="category" value="Nonfiction">
+                    Nonfiction
+                </button>
+            </form>
+        </li>
+        <li>
+            <form method="post" action="/user/category" class="dropd">
+                <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+                <button class="btn-nav" type="submit" name="category" value="Fiction">
+                    Fiction
+                </button>
+            </form>
+        </li>
+        <li>
+            <form method="post" action="/user/category" class="dropd">
+                <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+                <button class="btn-nav    " type="submit" name="category" value="Food">
+                    Food
+                </button>
+            </form>
+        </li>
+        <li>
+            <form method="post" action="/user/category" class="dropd">
+                <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+                <button class="btn-nav" type="submit" name="category" value="Nostalgic">
+                    Nostalgic
+                </button>
+            </form>
+        </li>
+        <li>
+            <form method="post" action="/user/category" class="dropd">
+                <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+                <button class="btn-nav    " type="submit" name="category" value="Philosophy">
+                    Philosophy
+                </button>
+            </form>
+        </li>
+    </ul>
+</li>
+{% endblock %}
+
+<!-- Content -->
+{% block content %}
+
+<!-- Nav for big screen -->
+<nav class="navbar sticky-top navbar-light  d-none d-md-block">
+    <div class="container-fluid gradient3">
+        <form method="post" action="/user/books" class="inline">
+            <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+            <button type="submit" name="category" value="Nonfiction" class="link-button btn  py-3 ">
+                All
+            </button>
+        </form>
+        <form method="post" action="/user/category" class="inline">
+            <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+            <button type="submit" name="category" value="Nonfiction" class="link-button btn  py-3 ">
+                Nonfiction
+            </button>
+        </form>
+        <form method="post" action="/user/category" class="inline">
+            <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+            <button type="submit" name="category" value="Fiction" class="link-button btn py-3 ">
+                Fiction
+            </button>
+        </form>
+        <form method="post" action="/user/category" class="inline">
+            <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+            <button type="submit" name="category" value="Food" class="link-button btn py-3 ">
+                Food
+            </button>
+        </form>
+        <form method="post" action="/user/category" class="inline">
+            <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+            <button type="submit" name="category" value="Nostalgic" class="link-button btn py-3 ">
+                Nostalgic
+            </button>
+        </form>
+        <form method="post" action="/user/category" class="inline">
+            <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+            <button type="submit" name="category" value="Philosophy" class="link-button btn py-3 ">
+                Philosophy
+            </button>
+        </form>
+
+
+
+        <form class="d-flex col-12 col-md-auto py-4 p-md-0" action="/user/search" method="post">
+            <div class="form-check pe-3 pt-2 ">
+                <input class="form-check-input" type="radio" name="x" id="gridRadios1" value="name" checked>
+                <label class="form-check-label" for="gridRadios1">
+                    Name
+                </label>
+            </div>
+            <div class="form-check pe-3 pt-2">
+                <input class="form-check-input" type="radio" name="x" id="gridRadios2" value="author">
+                <label class="form-check-label" for="gridRadios2">
+                    Author
+                </label>
+            </div>
+            <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+            <input class="form-control me-2" name="input" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-danger" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+<div class="container">
+    <h5 class="display-7 py-4">{{x}}</h5>
+</div>
+
+<section class="text-center container">
+    <div class="row py-lg-2">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">{{msg1}} books</h1>
+            <p class="lead text-muted">{{msg2}}</p>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="d-flex flex-wrap p-md-0 ps-md-4  justify-contnet-center">
+        {% for b in books %}
+        <div class="col-md-4 col-6 p-2 itix mx-auto">
+            <form action="/user/info_book" method="post">
+                <input type="hidden" name="idBook" value="{{b[0]}}">
+                <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+                <button type="submit" title="{{b[1]}}" class="shadow h" style="border: none; border-radius: 15px;">
+                    <div style="cursor: pointer;  border-radius: 15px; " class="shadow border d-md-flex w-100">
+                        <div style="background-image: url({{b[4]}});" class="b">
+                        </div>
+                        <div class="d-flex  justify-contnet-center p-2 h-100">
+                            <div>
+                                <h6 class="text-center">{{b[1]}}</h6>
+                                <p class="text-muted">By {{b[2]}}</p>
+                                <p class="text-muted">Year published: {{b[3]}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg brown center back-to-top" style="font-size: 2em;"><i
+        class="bi bi-arrow-up text-center"></i></a>
+
+{% endblock %}

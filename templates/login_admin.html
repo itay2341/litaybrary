@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block title %}Log-In{% endblock %}
+
+<!-- Head -->
+{% block head %}
+{{ super() }}
+<style type="text/css">
+    .important {
+        color: #d8701b;
+    }
+  
+</style>
+{% endblock %}
+
+<!-- Content -->
+{% block content %}
+<div class="login-page container">
+<h1 class="text-center display-3 pb-5" >Welcome admin</h1>
+<h4 class="display-6">To log in follow the requests:</h4>
+<div class="d-flex justify-contnet-center col-12">
+<form class="row g-3 " action="/admin/welcome" method="POST">
+    <div>
+      <label for="staticEmail2" >Name:</label>
+      <input class="form-control col-md-6 col-10" type="text" name="name" id="staticEmail2" value="admin">
+    </div>
+    <div >
+      <label for="inputPassword2" >Password:</label>
+      <input type="password" name="password" class="form-control col-md-6 col-10" id="inputPassword2" placeholder="Password">
+    </div>
+    <div >
+      <button type="submit" class="btn btn-primary mb-3 px-5">Login</button>
+    </div>
+  </form>
+</div>
+</div>
+{% endblock %}

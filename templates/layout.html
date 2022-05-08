@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<!--...............████████.................-->
+<!--.............██........██...............-->
+<!--...........██▒▒▒▒........██.............-->
+<!--.........██▒▒▒▒▒▒......▒▒▒▒██...........-->
+<!--.........██▒▒▒▒▒▒......▒▒▒▒██...........-->
+<!--.......██..▒▒▒▒........▒▒▒▒▒▒██.........-->
+<!--.......██................▒▒▒▒██.........-->
+<!--.....██▒▒......▒▒▒▒▒▒..........██.......-->
+<!--.....██......▒▒▒▒▒▒▒▒▒▒........██.......-->
+<!--.....██......▒▒▒▒▒▒▒▒▒▒....▒▒▒▒██.......-->
+<!--.....██▒▒▒▒..▒▒▒▒▒▒▒▒▒▒..▒▒▒▒▒▒██.......-->
+<!--.......██▒▒▒▒..▒▒▒▒▒▒....▒▒▒▒██.........-->
+<!--.......██▒▒▒▒............▒▒▒▒██.........-->
+<!--.........██▒▒..............██...........-->
+<!--...........████........████.............-->
+<!--...............████████.................-->
+<!--........................................-->
+<!--...███████╗██╗...██╗██████╗..██████╗....-->
+<!--...╚══███╔╝╚██╗.██╔╝██╔══██╗██╔═══██╗...-->
+<!--.....███╔╝..╚████╔╝.██████╔╝██║...██║...-->
+<!--....███╔╝....╚██╔╝..██╔══██╗██║...██║...-->
+<!--...███████╗...██║...██║..██║╚██████╔╝...-->
+<!--...╚══════╝...╚═╝...╚═╝..╚═╝.╚═════╝....-->
+<html>
+
+<head>
+  {% block head %}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <title>{% block title %}Itay's Library{% endblock %}</title>
+
+
+  {% endblock %}
+  <!-- Favicon -->
+  <link href="img/favicon.ico" rel="icon">
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+
+  <!-- Libraries Stylesheet -->
+  <link href="/static/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="/static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- style -->
+  <link href="/static/css/style.css" rel="stylesheet">
+
+  <style>
+    .login-page {
+      min-height: 60vh;
+    }
+
+
+    .bg1 {
+
+      background: #FFEBC1 !important;
+
+    }
+
+    .colorc3 {
+      background: rgb(165, 42, 42);
+      background: radial-gradient(circle, rgba(165, 42, 42, 1) 10%, rgba(200, 98, 98, 1) 43%, rgba(165, 42, 42, 1) 72%);
+
+    }
+
+    .my {
+      background: rgb(252, 210, 120) !important;
+      background: linear-gradient(356deg, rgba(252, 210, 120, 1) 1%, rgba(252, 212, 128, 1) 7%, rgba(252, 212, 128, 1) 7%, rgba(252, 212, 128, 1) 13%, rgba(249, 215, 142, 1) 26%, rgba(249, 223, 163, 1) 39%, rgba(249, 227, 180, 1) 62%, rgba(255, 235, 193, 1) 100%) !important;
+    }
+
+    .bg2 {
+      background: #D7A86E !important;
+
+    }
+
+    .bg3 {
+      background: #A64B2A !important;
+
+    }
+
+    .bg4 {
+      background: #8E3200 !important;
+
+    }
+
+    .brown {
+      background: #a52a2a !important;
+    }
+
+    .bold {
+      font-weight: 800;
+      font-size: 2em;
+    }
+
+    .s {
+      font-size: 800 !important;
+      font-style: oblique !important;
+    }
+
+    body {
+      background: rgb(252, 210, 120) !important;
+      background: linear-gradient(356deg, rgba(252, 210, 120, 1) 1%, rgba(252, 212, 128, 1) 7%, rgba(252, 212, 128, 1) 7%, rgba(252, 212, 128, 1) 13%, rgba(249, 215, 142, 1) 26%, rgba(249, 223, 163, 1) 39%, rgba(249, 227, 180, 1) 62%, rgba(255, 235, 193, 1) 100%) !important;
+    }
+
+    .footer-dark {
+      padding: 50px 0;
+      color: #f0f9ff;
+      background-color: #282d32;
+    }
+
+    .footer-dark h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .footer-dark ul {
+      padding: 0;
+      list-style: none;
+      line-height: 1.6;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    .footer-dark ul a {
+      color: inherit;
+      text-decoration: none;
+      opacity: 0.6;
+    }
+
+    .footer-dark ul a:hover {
+      opacity: 0.8;
+    }
+
+    @media (max-width:767px) {
+      .footer-dark .item:not(.social) {
+        text-align: center;
+        padding-bottom: 20px;
+      }
+    }
+
+    .footer-dark .item.text {
+      margin-bottom: 36px;
+    }
+
+    @media (max-width:767px) {
+      .footer-dark .item.text {
+        margin-bottom: 0;
+      }
+    }
+
+    .footer-dark .item.text p {
+      opacity: 0.6;
+      margin-bottom: 0;
+    }
+
+    .footer-dark .item.social {
+      text-align: center;
+    }
+
+    @media (max-width:991px) {
+      .footer-dark .item.social {
+        text-align: center;
+        margin-top: 20px;
+      }
+    }
+
+    .footer-dark .item.social>a {
+      font-size: 20px;
+      width: 36px;
+      height: 36px;
+      line-height: 36px;
+      display: inline-block;
+      text-align: center;
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4);
+      margin: 0 8px;
+      color: #fff;
+      opacity: 0.75;
+    }
+
+    .footer-dark .item.social>a:hover {
+      opacity: 0.9;
+    }
+
+    .footer-dark .copyright {
+      text-align: center;
+      padding-top: 24px;
+      opacity: 0.3;
+      font-size: 13px;
+      margin-bottom: 0;
+    }
+
+    .itaycolor {
+      background: #711433;
+    }
+
+    .colorspecial {
+      background: rgb(165, 42, 42);
+      background: linear-gradient(90deg, rgba(165, 42, 42, 1) 7%, rgba(156, 59, 59, 1) 20%, rgba(163, 51, 51, 1) 29%, rgba(176, 51, 51, 1) 51%, rgba(186, 54, 54, 1) 61%, rgba(180, 54, 54, 1) 69%, rgba(165, 42, 42, 1) 81%);
+
+    }
+
+    @media (min-width:500px) {
+      .clear {
+        width: 0% !important;
+      }
+    }
+
+    .box {
+      box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    }
+
+    .bg12 {
+      background: rgb(188, 5, 5) !important;
+      font-size: 2em !important;
+
+    }
+
+    .btn-nav{
+    background: none;
+    border: none;
+    color: white;
+    padding: 0;
+    margin-right:35px ;
+    padding-top: 12px;
+    padding-bottom:12px ;
+    font-size: 1.35em;
+  }
+
+  .btn-nav:hover{
+    transition: 800ms !important;
+    color: black !important ;
+    transform: scale(1.1) !important;
+  }
+
+  .a-link:hover{
+    transition: 800ms !important;
+    color: black !important ;
+    transform: scale(1.1) !important;
+
+  }
+
+  @media (max-width:500px) {
+    
+  .btn-nav:hover{
+    transition: none !important;
+    color: white !important;
+    transform: none !important;
+  }
+    .btn-nav{
+    background: none !important;
+    border: none !important;
+    color: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    padding-top: 12px !important;
+    padding-bottom:12px  !important;
+    font-size: 1.15em ;
+  }
+
+  }
+.imp{
+  font-size: 1.35em  !important;
+
+}
+
+    /* ----------------------------------------------- */
+  </style>
+</head>
+
+<body>
+
+  {% block nav %}
+  <nav class="navbar navbar-expand-lg py-3 py-md-0 navbar-dark colorspecial">
+    <div class="container-fluid py-3">
+      <a class="navbar-brand pe-0 pe-md-5 " href="/">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item btn-nav imp">
+            <a class="text-white a-link text-decoration-none" href="/login">
+              Log-In
+            </a>
+          </li>
+          <li class="nav-item btn-nav">
+            <a class="text-white a-link text-decoration-none" href="/signup">
+              Sign-Up
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  {% endblock %}
+
+  <!-- Content -->
+  {% block content %}{% endblock %}
+
+  <!-- Footer -->
+  <div class="footer-dark "
+    style="background-image: url(https://innovationinpolitics.eu/wp-content/uploads/2020/03/jaredd-craig-HH4WBGNyltc-unsplash-1024x1536.jpg);">
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-md-3 item">
+            <h3>Menu</h3>
+            <ul>
+              <li><a href="/login">Login</a></li>
+              <li><a href="/signup">Signup</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-md-3 item">
+            <h3>About</h3>
+            <ul>
+              <li><a href="/about">Company</a></li>
+              {% block x %}
+              <li><a href="/loginAA">Admin</a></li>
+              {% endblock %}
+            </ul>
+          </div>
+          <div class="col-md-6 item text">
+            <p>Our vision is to make the world a better place to live and make life. We beleve in books, in learning
+              new technique or reading new story. To fall in love with novel or to explore new ways of making our
+              famous food. How many things have we not seen yet?</p>
+          </div>
+          <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i
+                class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a
+              href="#"><i class="icon ion-social-instagram"></i></a></div>
+        </div>
+        <p class="copyright "> &copy; Copyright 2022 by Itay Groer
+        </p>
+      </div>
+    </footer>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+
+  <!-- JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="/static/lib/wow/wow.min.js"></script>
+  <script src="/static/lib/easing/easing.min.js"></script>
+  <script src="/static/lib/waypoints/waypoints.min.js"></script>
+  <script src="/static/lib/owlcarousel/owl.carousel.min.js"></script>
+
+  <!-- more -->
+  <script src="/static/js/main.js"></script>
+
+  <!-- Back to Top -->
+  <a href="#" class="btn btn-lg bg12 center back-to-top"><i class="bi bi-arrow-up text-center"></i></a>
+
+</body>
+
+</html>

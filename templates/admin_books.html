@@ -1,0 +1,334 @@
+{% extends "admin.html" %}
+{% block title %}Books{% endblock %}
+
+<!-- Content -->
+{% block content %}
+<h1 class="display-3 py-2 text-center">My books</h1>
+<p class="important">
+<h5 class="display-7 py-2 text-center">{{x}}</h5>
+
+<div class="container">
+  <div class="accordion accordion-flush shadow" id="accordionFlushExample">
+    <div class="accordion-item border">
+      <h2 class="accordion-header" id="flush-headingOne">
+        <button class="accordion-button collapsed border" type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+          Add books
+        </button>
+      </h2>
+      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+        data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <form class="row g-3" action="/admin/books" method="POST">
+            <div class="col-md-4">
+              <label for="validationServer01" class="form-label">type_id</label>
+              <input type="number" name="type_id" class="form-control is-valid" id="validationServer01" value="1"
+                required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="validationServer02" class="form-label">name</label>
+              <input type="text" name="name" class="form-control is-valid" id="validationServer02" value="name"
+                required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="validationServer02" class="form-label">author</label>
+              <input type="text" name="author" class="form-control is-valid" id="validationServer02" value="author"
+                required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="validationServer02" class="form-label">year_published</label>
+              <input type="text" name="year_published" class="form-control is-valid" id="validationServer02"
+                value="2020" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="validationServer02" class="form-label">price</label>
+              <input type="number" name="price" class="form-control is-valid" id="validationServer02" value="10"
+                required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="validationServer02" class="form-label">copies</label>
+              <input type="number" name="copies" class="form-control is-valid" id="validationServer02" value="30"
+                required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="form-floating">
+              <textarea name="img_url" class="form-control" placeholder="Leave a comment here"
+                id="floatingTextarea"></textarea>
+              <label for="floatingTextarea">img_url</label>
+            </div>
+            <div class="form-floating">
+              <textarea name="info" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                style="height: 100px"></textarea>
+              <label for="floatingTextarea2">Book info</label>
+            </div>
+            <div class="form-floating">
+              <textarea name="category" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                style="height: 100px"></textarea>
+              <label for="floatingTextarea2">Category</label>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit">Add</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item border">
+      <h2 class="accordion-header" id="flush-headingTwo">
+        <button class="accordion-button collapsed border" type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+          Update status
+        </button>
+      </h2>
+      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+        data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <form class="row g-3" action="/admin/books" method="POST">
+            <div class="col-md-4">
+              <label for="validationServer01" class="form-label">id</label>
+              <input type="number" name="id" class="form-control is-valid" id="validationServer01" value="1" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="validationServer02" class="form-label">active</label>
+              <input type="number" name="active" class="form-control is-valid" id="validationServer02" value="1"
+                required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit">Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="accordion-item border">
+      <h2 class="accordion-header" id="flush-headingFive">
+        <button class="accordion-button collapsed border" type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+          Update copies
+        </button>
+      </h2>
+      <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"
+        data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <form class="row g-3" action="/admin/copies" method="POST">
+            <div class="col-md-4">
+              <label for="validationServer01" class="form-label">id</label>
+              <input type="number" name="id" class="form-control is-valid" id="validationServer01" value="1" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="validationServer02" class="form-label">copies</label>
+              <input type="number" name="copies" class="form-control is-valid" id="validationServer02" value="1"
+                required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit">Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="accordion-item border">
+      <h2 class="accordion-header" id="flush-headingThree">
+        <button class="accordion-button collapsed border" type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+          Show all
+        </button>
+      </h2>
+      <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+        data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <strong>All books</strong><br>
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th class="text-center">#</th>
+                <th class="text-center">type_id</th>
+                <th class="text-center">name</th>
+                <th class="text-center">author</th>
+                <th class="text-center">year_published</th>
+                <th class="text-center">price</th>
+                <th class="text-center">copies</th>
+                <th class="text-center">img_url</th>
+                <th class="text-center">info</th>
+                <th class="text-center">category</th>
+                <th class="text-center">status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for c in books %}
+              <tr>
+                <td class="text-center">{{c[0]}}</td>
+                <td class="text-center">{{c[1]}}</td>
+                <td>
+                  <h6 class="display-12 text-center">{{c[2]}}</h6>
+                </td>
+                <td class="text-center">{{c[3]}}</td>
+                <td class="text-center">{{c[4]}}</td>
+                <td class="text-center">{{c[5]}}</td>
+                <td class="text-center">{{c[6]}}</td>
+                <td>
+                  <button class="btn btn-success w-100" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasExample{{loop.index+1}}" aria-controls="offcanvasExample{{loop.index+1}}">
+                    url
+                  </button>
+                  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample{{loop.index+1}}"
+                    aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas-header">
+                      <h5 class="offcanvas-title" id="offcanvasExampleLabel">image url</h5>
+                      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                      {{c[7]}}
+                    </div>
+                </td>
+                <td>
+                  <button class="btn btn-success w-100 " type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasExample90{{loop.index}}" aria-controls="offcanvasExample90{{loop.index}}">
+                    info
+                  </button>
+                  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample90{{loop.index}}"
+                    aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas-header">
+                      <h5 class="offcanvas-title" id="offcanvasExampleLabel">book info</h5>
+                      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                      <div>
+                        {{c[8]}}
+                      </div>
+                </td>
+                <td class="text-center">{{c[9]}}</td>
+                <td class="text-center">{{c[10]}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item border">
+      <h2 class="accordion-header" id="flush-headingFour">
+        <button class="accordion-button collapsed border" type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+          Show only the relevant for the customers
+        </button>
+      </h2>
+      <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+        data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <strong>Relevant books</strong><br>
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th class="text-center">#</th>
+                <th class="text-center">name</th>
+                <th class="text-center">author</th>
+                <th class="text-center">year_published</th>
+                <th class="text-center">img_url</th>
+                <th class="text-center">info</th>
+                <th class="text-center">days_to_loan</th>
+                <th class="text-center">fee_per_day</th>
+                <th class="text-center">category</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- id, name, author, year_published,img_url, info, days_to_loan, fee_per_day ,category  -->
+
+              {% for c in books2 %}
+              <tr>
+                <td class="text-center">{{c[0]}}</td>
+                <td>
+                  <h6 class="display-12 text-center">{{c[1]}}</h6>
+                </td>
+                <td class="text-center">{{c[2]}}</td>
+                <td class="text-center">{{c[3]}}</td>
+                <td>
+                  <button class="btn btn-success w-100" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasExample91{{loop.index+4}}"
+                    aria-controls="offcanvasExample91{{loop.index+4}}">
+                    url
+                  </button>
+                  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample91{{loop.index+4}}"
+                    aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas-header">
+                      <h5 class="offcanvas-title" id="offcanvasExampleLabel">image url</h5>
+                      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                      <div>
+                        {{c[4]}}
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <button class="btn btn-success w-100" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasExample92{{loop.index+3}}"
+                    aria-controls="offcanvasExample92{{loop.index+3}}">
+                    info
+                  </button>
+                  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample92{{loop.index+3}}"
+                    aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas-header">
+                      <h5 class="offcanvas-title" id="offcanvasExampleLabel">book info</h5>
+                      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                      <div>
+                        {{c[5]}}
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-center">{{c[6]}}</td>
+                <td class="text-center">{{c[7]}}</td>
+                <td class="text-center">{{c[8]}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

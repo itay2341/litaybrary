@@ -1,0 +1,274 @@
+{% extends "welcome.html" %}
+{% block title %}Details{% endblock %}
+
+<!-- Head -->
+{% block head %}
+{{ super() }}
+<style>
+  .p {
+    margin-bottom: 100px !important;
+  }
+
+  .alert {
+    background: rgb(184, 119, 49);
+  }
+</style>
+{% endblock %}
+
+<!-- Content -->
+{% block content %}
+
+<!-- Personal Details Modals -->
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+  tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg1">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel">Personal Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>
+          <strong>Name :</strong> {{customer[1]}}<br>
+          <strong>City :</strong> {{customer[2]}}<br>
+          <strong>Birth-Day :</strong> {{customer[3][:10]}}
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary brown" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Change
+          details</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+  tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg1">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel2">Update Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+
+        <div class="container pb-3">
+          <form class="row g-3" action="/user/detailsEdit" method="POST">
+            <div class="col-md-4">
+              <label for="staticEmail2" class="visually-hidden">Name</label>
+              <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="{{customer[1]}}">
+            </div>
+            <div class="col-md-5">
+              <label for="inputPassword2" class="visually-hidden">New name</label>
+              <input type="text" name="name" class="form-control" id="inputPassword2" placeholder="name">
+              <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+            </div>
+            <div class="col-md-3">
+              <button type="submit" class="btn btn-primary mb-3 brown">Confirm</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="container pb-3">
+          <form class="row g-3" action="/user/detailsEdit" method="POST">
+            <div class="col-md-4">
+              <label for="staticEmail2" class="visually-hidden">City</label>
+              <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="{{customer[2]}}">
+            </div>
+            <div class="col-md-5">
+              <label for="inputPassword2" class="visually-hidden">New city</label>
+              <input type="text" name="city" class="form-control" id="inputPassword2" placeholder="city">
+              <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+            </div>
+            <div class="col-md-3">
+              <button type="submit" class="btn btn-primary mb-3 brown">Confirm</button>
+            </div>
+          </form>
+        </div>
+
+
+        <div class="container">
+          <form class="row g-3" action="/user/detailsEdit" method="POST">
+            <div class="col-md-4">
+              <label for="staticEmail2" class="visually-hidden">Birth-Day</label>
+              <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="{{customer[3][:10]}}">
+            </div>
+            <div class="col-md-5">
+              <label for="inputPassword2" class="visually-hidden">New birth-day</label>
+              <input type="date" name="date" class="form-control" id="inputPassword2" placeholder="birth-day"
+                max="{{year}}-{{month}}-{{day}}">
+              <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+            </div>
+            <div class="col-md-3">
+              <button type="submit" class="btn btn-primary mb-3 brown">Confirm</button>
+            </div>
+          </form>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Login Details Modals -->
+<div class="modal fade" id="exampleModalToggle1" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+  tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg1">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel">Login Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>
+          <strong>Email :</strong> {{customer[5]}}<br>
+          <strong>Password :</strong> {{customer[6]}}<br>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary brown" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Change
+          details</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+  tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg1">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel2">Update Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container pb-3">
+          <form class="row g-3" action="/user/detailsEdit2" method="POST">
+            <div class="col-md-5">
+              <label for="staticEmail2" class="visually-hidden">Email</label>
+              <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="{{customer[5]}}">
+            </div>
+            <div class="col-md-4">
+              <label for="inputPassword2" class="visually-hidden">New email</label>
+              <input type="text" name="email" class="form-control" id="inputPassword2" placeholder="email">
+              <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+            </div>
+            <div class="col-md-3">
+              <button type="submit" class="btn btn-primary mb-3 brown">Confirm</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="container pb-3">
+          <form class="row g-3" action="/user/detailsEdit2" method="POST">
+            <div class="col-md-5">
+              <label for="staticEmail2" class="visually-hidden">Password</label>
+              <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="{{customer[6]}}">
+            </div>
+            <div class="col-md-4">
+              <label for="inputPassword2" class="visually-hidden">New password</label>
+              <input type="password" name="pass" class="form-control" id="inputPassword2" placeholder="password">
+              <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+            </div>
+            <div class="col-md-3">
+              <button type="submit" class="btn btn-primary mb-3 brown">Confirm</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Close Account Modal -->
+<div class="modal fade bg3" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Close Account</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Make sure you want to close your account.<br>
+        You can talk to us if something feels not good for you.<br> We want to know it!<br>
+        You won't be able to re-open your account.
+        To join us again you will need to open new account like you did before.<br>
+        <strong>Click "Understood" to keep going</strong>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <form method="post" action="/user/status" class="inline">
+          <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+          <button type="submit" class="btn btn-primary">
+            Understood
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="alert alert-warning alert-dismissible fade show container bg2 " role="alert">
+  <strong>Be careful!</strong> Don't let anybody know your personal details...
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<div class="container pt-4">
+  Date of your joining : {{customer[4][:10]}}
+</div>
+
+<div class="container pt-4">
+  {{x}}
+</div>
+
+<div class="container pt-5">
+  <div class="row text-center">
+    <div class="col-lg-4">
+      <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+        src="http://www.clker.com/cliparts/0/8/I/5/a/0/personal-details-hi.png"></img>
+
+      <h2>Personal details</h2>
+      <p>Your name, city and birth-day. You can watch it and change it if something is written wrong.</p>
+      <p><a class="btn bg3 p" style="color: white;" data-bs-toggle="modal" href="#exampleModalToggle" role="button">View
+          details
+          &raquo;</a></p>
+    </div>
+    <div class="col-lg-4">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPTB6jFei9UrXQJ1wH2bWivr1yXJgKVGO7J82YKD-wwxJdUyXgfgoKKiWKyptO864p5rA&usqp=CAU"
+        class="bd-placeholder-img rounded-circle" width="140" height="140"> </img>
+
+      <h2>Login details</h2>
+      <p>Know your email and password, and keep it to log in next time. Click here to see your options.</p>
+      <p><a class="btn bg3 p" style="color: white;" data-bs-toggle="modal" href="#exampleModalToggle1"
+          role="button">View details
+          &raquo;</a></p>
+    </div>
+
+    <div class="col-lg-4">
+      <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+        src="https://media.wired.com/photos/5be4cd03db23f3775e466767/master/pass/books-521812297.jpg"></img>
+
+      <h2>My loans</h2>
+      <p>Click here to watch all your history of loans and the active ones.</p>
+      <form method="post" action="/user/myloans" class="inline">
+        <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+        <p>
+          <button type="submit" class="btn bg3" style="color: white;">
+            View details
+            &raquo;
+          </button>
+        </p>
+      </form>
+    </div>
+  </div>
+</div><br>
+<hr>
+<br><br>
+
+<!-- Button trigger modal -->
+<button type="button" class="link-button btn btn-light py-3 bg2" data-bs-toggle="modal"
+  data-bs-target="#staticBackdrop">
+  close your account
+</button>
+{% endblock %}

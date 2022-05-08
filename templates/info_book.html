@@ -1,0 +1,73 @@
+{% extends "welcome.html" %}
+{% block title %}Books{% endblock %}
+
+<!-- Head -->
+{% block head %}
+{{ super() }}
+<style>
+
+@media (max-width:500px) {
+    .itix {
+        max-width: 2cm !important ;
+        font-size: 3em !important ;
+       }
+    .pic{
+        width: 300px !important ;
+    }
+    .pad{
+        margin-top: 20px !important ;
+    }
+}
+
+</style>
+{% endblock %}
+
+<!-- Content -->
+{% block content %}
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg1">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalToggleLabel2">Important Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container pb-3">
+                    Know that you can take this book for only {{types_book[0]}} days.<br>
+                    In addition - every day of delay you will pay {{types_book[1]}} ILS.
+                    <form class="row g-3 pt-4" action="/user/loan" method="POST">
+                        <div class="col-md-3">
+                            <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+                            <input type="hidden" name="idBook" value="{{book[0]}}">
+                            <button type="submit" class="btn btn-primary mb-3 brown">Agree</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container p-5 p-md-0">
+
+    <h1 class="text-center display-3 itix">{{book[2]}}</h1>
+    <div class="d-md-flex p-md-5">
+        <div class="p-2 text-center">
+            <img class="shadow pic" style="border-radius: 14px;" width="400px" src={{book[7]}} alt={{book[2]}}>
+        </div>
+        <div class="p-md-3 py-4 ">
+            <h6 class="text-center text-secondary display-6 pb-3">By {{book[3]}}</h6>
+            <p class="text-md-start  ms-md-5">{{book[8]}}</p>
+            <p class=" ms-md-5">Year published {{book[4]}}</p>
+            <div class="text-md-start  ms-md-5">
+                <a class="link-button btn btn-info px-5 me-2" data-bs-toggle="modal" href="#exampleModalToggle" role="button">
+                    Loan
+                </a>
+                <button onclick="history.back()" class="btn btn-dark px-5 pad" type="button">Back &raquo;
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

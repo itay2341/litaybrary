@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+{% block title %}Log-In{% endblock %}
+
+<!-- Head -->
+{% block head %}
+{{ super() }}
+<style type="text/css">
+  .important {
+    color: #d8701b;
+  }
+
+  .color5 {
+    background-color: rgb(220, 176, 93) !important;
+  }
+
+  .color6 {
+    background: #cc7e3e !important;
+  }
+
+  .color7 {
+    background: #a52a2a !important;
+  }
+
+  .form2 {
+    padding-left: 400px !important;
+  }
+
+  .b7 {
+    margin-left: 180px !important;
+
+  }
+
+  .login22 {
+    font-size: 1.3em !important;
+    padding-top: 20px !important;
+  }
+
+  .login9 {
+    font-size: 2em !important;
+    font-style: italic !important;
+  }
+
+
+  .colorc {
+    background: rgb(171, 64, 64);
+    background: linear-gradient(0deg, rgba(171, 64, 64, 1) 8%, rgba(166, 64, 64, 1) 28%, rgba(175, 62, 62, 1) 36%, rgba(165, 42, 42, 1) 65%);
+  }
+
+  .colorc2 {
+    background: rgb(149, 97, 97);
+    background: linear-gradient(0deg, rgba(149, 97, 97, 1) 4%, rgba(154, 89, 89, 1) 11%, rgba(167, 87, 87, 1) 18%, rgba(166, 88, 88, 1) 28%, rgba(168, 78, 78, 1) 42%, rgba(170, 73, 73, 1) 56%, rgba(165, 42, 42, 1) 76%);
+
+  }
+
+  .ido {
+    background: rgb(227, 198, 146) !important;
+  }
+
+  @media (max-width:500px) {
+    .phone {
+      right: 85px !important;
+      width: 250px !important;
+
+    }
+
+    .ph {
+      margin-left: 80px !important;
+    }
+  }
+
+  .login_page {
+      min-height: 65vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 200px;
+  }
+  
+  .login-input {
+      min-height: 350px;
+      width: 350px;
+      border-radius: 10%;
+      background: rgb(233, 156, 14);
+  }
+
+
+</style>
+{% endblock %}
+
+<!-- Content -->
+{% block content %}
+
+<!-- Spinner -->
+<div id="spinner"
+  class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+  <div class="spinner-border " style="width: 3rem; height: 3rem; color: brown;" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<div class="container py-5 bg-danger colorc3">
+  <h1 class="text-center  display-3">Welcome Back</h1>
+  <div class="login_page pt-5">
+      <div class="login-input my box">
+          <form action="/user/welcomecust" class="d-flex justify-content-center " method="POST">
+              <div class="pt-5 my-3">
+                  <h5>Please Login</h5>
+                  <input placeholder="Email..." class="form-control my-4" type="email" name="email">
+                  <input placeholder="Password" class="form-control" type="password" name="password">
+                  <button class="btn btn-dark mt-4" type="submit">Login</button>
+                  <br>
+                  <a style="color: rgb(65, 22, 22);" href="/signup">New to Litaybrary? &nbsp;<span>Sign
+                    Up</span></a>
+                <img src="/static/myyyyyyyyyyy.png" style="height: 80px; width: 60px;">
+              </div>
+          </form>
+      </div>
+  </div>
+</div>
+{% endblock %}

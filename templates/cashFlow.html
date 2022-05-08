@@ -1,0 +1,31 @@
+{% extends "admin.html" %}
+{% block title %}CashFlow{% endblock %}
+
+<!-- Content -->
+{% block content %}
+<div class="container">
+<h5 class="display-6 pt-4">CashFlow:</h5>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th class="text-center">id</th>
+      <th class="text-center">date</th>
+      <th class="text-center">expenses</th>
+      <th class="text-center">income</th>
+      <th class="text-center">local_expenses</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for c in cashFlow %}
+    <tr>
+      <td class="text-center">{{c[0]}}</td>
+      <td class="text-center">{{c[1]}}</td>
+      <td class="text-center">{{c[2]}}</td>
+      <td class="text-center">{{c[3]}}</td>
+      <td class="text-center">{{c[4]}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends "admin.html" %}
+{% block title %}Search Book{% endblock %}
+
+
+<!-- Content -->
+{% block content %}
+<div class="container">
+    <form class="d-flex col-12 col-md-auto py-4 p-md-0" action="/admin/search2" method="post">
+        <div class="form-check pe-3 pt-2 ">
+            <input class="form-check-input " type="radio" name="x" id="gridRadios1" value="all" checked>
+            <label class="form-check-label " for="gridRadios1">
+                All
+            </label>
+        </div>
+        <div class="form-check pe-3 pt-2 ">
+            <input class="form-check-input " type="radio" name="x" id="gridRadios1" value="name">
+            <label class="form-check-label " for="gridRadios1">
+                Name
+            </label>
+        </div>
+        <div class="form-check pe-3 pt-2">
+            <input class="form-check-input" type="radio" name="x" id="gridRadios2" value="author">
+            <label class="form-check-label" for="gridRadios2">
+                Author name
+            </label>
+        </div>
+        <input class="form-control me-2" name="input" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-danger" type="submit">Search</button>
+    </form>
+</div>
+<br>
+<div class="container">{{x}} {{input}}</div>
+
+<div class="container">
+    <h5 class="display-6 pt-4">Books:</h5>
+    <!-- customers Table -->
+    <table class="table table-striped table-hover table-bordered table-sm" id="dtBasicExample" cellspacing="0"
+        width="100%">
+        <thead>
+            <tr>
+                <th class="text-center th-sm">#</th>
+                <th class="text-center th-sm">type_id</th>
+                <th class="text-center">name</th>
+                <th class="text-center">author</th>
+                <th class="text-center">year_published</th>
+                <th class="text-center">price</th>
+                <th class="text-center">copies</th>
+                <th class="text-center">img_url</th>
+                <th class="text-center">info</th>
+                <th class="text-center">category</th>
+                <th class="text-center">status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in books %}
+            <tr>
+                <td class="text-center">{{c[0]}}</td>
+                <td class="text-center">{{c[1]}}</td>
+                <td>
+                    <h6 class="display-12 text-center">{{c[2]}}</h6>
+                </td>
+                <td class="text-center">{{c[3]}}</td>
+                <td class="text-center">{{c[4]}}</td>
+                <td class="text-center">{{c[5]}}</td>
+                <td class="text-center">{{c[6]}}</td>
+                <td class="text-center">
+                    <button class="btn btn-success" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasExample8{{loop.index}}"
+                        aria-controls="offcanvasExample8{{loop.index}}">
+                        url
+                    </button>
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample8{{loop.index}}"
+                        aria-labelledby="offcanvasExampleLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">image url</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <p>{{c[7]}}</p>
+                        </div>
+                    </div>
+                </td>
+                <td class="text-center">
+                    <button class="btn btn-success" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasExample7{{loop.index}}"
+                        aria-controls="offcanvasExample7{{loop.index}}">
+                        info
+                    </button>
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample7{{loop.index}}"
+                        aria-labelledby="offcanvasExampleLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">book info</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            {{c[8]}}
+                        </div>
+                    </div>
+                </td>
+                <td class="text-center">{{c[9]}}</td>
+                <td class="text-center">{{c[10]}}</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+{% endblock %}

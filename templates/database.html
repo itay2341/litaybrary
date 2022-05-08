@@ -1,0 +1,187 @@
+{% extends "admin.html" %}
+{% block title %}DataBase{% endblock %}
+
+<!-- Content -->
+{% block content %}
+
+<h1 class="text-center display-3">This is my DataBase</h1>
+<div class="container">
+  <h5 class="display-6 pt-4">Books:</h5>
+  <table class="table table-striped table-hover table-bordered table-sm" id="dtBasicExample" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th class="text-center th-sm">#</th>
+        <th class="text-center th-sm">type_id</th>
+        <th class="text-center">name</th>
+        <th class="text-center">author</th>
+        <th class="text-center">year_published</th>
+        <th class="text-center">price</th>
+        <th class="text-center">copies</th>
+        <th class="text-center">img_url</th>
+        <th class="text-center">info</th>
+        <th class="text-center">category</th>
+        <th class="text-center">status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for c in books %}
+      <tr>
+        <td class="text-center">{{c[0]}}</td>
+        <td class="text-center">{{c[1]}}</td>
+        <td>
+          <h6 class="display-12 text-center">{{c[2]}}</h6>
+        </td>
+        <td class="text-center">{{c[3]}}</td>
+        <td class="text-center">{{c[4]}}</td>
+        <td class="text-center">{{c[5]}}</td>
+        <td class="text-center">{{c[6]}}</td>
+        <td class="text-center">
+          <button class="btn btn-success" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasExample8{{loop.index}}" aria-controls="offcanvasExample8{{loop.index}}">
+            url
+          </button>
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample8{{loop.index}}"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasExampleLabel">image url</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <p>{{c[7]}}</p>
+            </div>
+          </div>
+        </td>
+        <td class="text-center">
+          <button class="btn btn-success" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasExample7{{loop.index}}" aria-controls="offcanvasExample7{{loop.index}}">
+            info
+          </button>
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample7{{loop.index}}"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasExampleLabel">book info</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                {{c[8]}}
+            </div>
+          </div>
+        </td>
+        <td class="text-center">{{c[9]}}</td>
+        <td class="text-center">{{c[10]}}</td>
+      </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+
+  <h5 class="display-6 pt-4">Customers:</h5>
+  <!-- customers Table -->
+  <table class="table pb-4 text-center table-striped table-hover">
+    <thead class="text-center">
+      <tr>
+        <th class="text-center">#</th>
+        <th class="text-center">name</th>
+        <th class="text-center">city</th>
+        <th class="text-center">dateBirth</th>
+        <th class="text-center">dateJoin</th>
+        <th class="text-center">email</th>
+        <th class="text-center">pass</th>
+        <th class="text-center">status</th>
+        <th class="text-center">pay_status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for c in customers %}
+      <tr>
+        <td class="text-center">{{c[0]}}</td>
+        <td class="text-center">{{c[1]}}</td>
+        <td class="text-center">{{c[2]}}</td>
+        <td class="text-center">{{c[3][0:10]}}</td>
+        <td class="text-center">{{c[4][0:10]}}</td>
+        <td class="text-center">{{c[5]}}</td>
+        <td class="text-center">{{c[6]}}</td>
+        <td class="text-center" class="text-center">{{c[7]}}</td>
+        <td class="text-center" class="text-center">{{c[8]}}</td>
+      </tr>
+
+      {% endfor %}
+
+    </tbody>
+  </table>
+  <!--close customers Table -->
+  <h5 class="display-6 pt-4">Types:</h5>
+
+  <table class="table table-striped table-hover text-center">
+    <thead>
+      <tr>
+        <th class="text-center">#</th>
+        <th class="text-center">days_to_loan</th>
+        <th class="text-center">fee_per_day</th>
+        <th class="text-center">status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for c in types %}
+      <tr>
+        <td class="text-center">{{c[0]}}</td>
+        <td class="text-center">{{c[1]}}</td>
+        <td class="text-center">{{c[2]}}</td>
+        <td class="text-center">{{c[3]}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <h5 class="display-6 pt-4">Loans:</h5>
+
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th class="text-center">#</th>
+        <th class="text-center">customer_id</th>
+        <th class="text-center">book_id</th>
+        <th class="text-center">date_of_start</th>
+        <th class="text-center">date_of_return</th>
+        <th class="text-center">status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for c in loans %}
+      <tr>
+        <td class="text-center">{{c[0]}}</td>
+        <td class="text-center">{{c[1]}}</td>
+        <td class="text-center">{{c[2]}}</td>
+        <td class="text-center">{{c[3][:10]}}</td>
+        <td class="text-center">{{c[4][:10]}}</td>
+        <td class="text-center">{{c[5]}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <h5 class="display-6 pt-4">CashFlow:</h5>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th class="text-center">#</th>
+        <th class="text-center">date</th>
+        <th class="text-center">expenses</th>
+        <th class="text-center">income</th>
+        <th class="text-center">local_expenses</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for w in cashFlow %}
+      <tr>
+        <td class="text-center">{{w[0]}}</td>
+        <td class="text-center">{{w[1]}}</td>
+        <td class="text-center">{{w[2]}}</td>
+        <td class="text-center">{{w[3]}}</td>
+        <td class="text-center">{{w[4]}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

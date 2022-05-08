@@ -1,0 +1,70 @@
+{% extends "admin.html" %}
+{% block title %}Search Customer{% endblock %}
+
+
+<!-- Content -->
+{% block content %}
+<div class="container">
+    <form class="d-flex col-12 col-md-auto py-4 p-md-0" action="/admin/search" method="post">
+        <div class="form-check pe-3 pt-2 ">
+            <input class="form-check-input " type="radio" name="x" id="gridRadios1" value="all" checked>
+            <label class="form-check-label " for="gridRadios1">
+                All
+            </label>
+        </div>
+        <div class="form-check pe-3 pt-2 ">
+            <input class="form-check-input " type="radio" name="x" id="gridRadios1" value="name">
+            <label class="form-check-label " for="gridRadios1">
+                Name
+            </label>
+        </div>
+        <div class="form-check pe-3 pt-2">
+            <input class="form-check-input" type="radio" name="x" id="gridRadios2" value="id">
+            <label class="form-check-label" for="gridRadios2">
+                id
+            </label>
+        </div>
+        <input class="form-control me-2" name="input" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-danger" type="submit">Search</button>
+    </form>
+</div>
+<br>
+<div class="container">{{a}}  {{input}}</div>
+
+<div class="container">
+<h5 class="display-6 pt-4">Customers:</h5>
+<!-- customers Table -->
+<table class="table pb-4 text-center table-striped table-hover">
+    <thead class="text-center">
+        <tr>
+            <th class="text-center">#</th>
+            <th class="text-center">name</th>
+            <th class="text-center">city</th>
+            <th class="text-center">dateBirth</th>
+            <th class="text-center">dateJoin</th>
+            <th class="text-center">email</th>
+            <th class="text-center">pass</th>
+            <th class="text-center">status</th>
+            <th class="text-center">pay_status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for c in customers %}
+        <tr>
+            <td class="text-center">{{c[0]}}</td>
+            <td class="text-center">{{c[1]}}</td>
+            <td class="text-center">{{c[2]}}</td>
+            <td class="text-center">{{c[3][0:10]}}</td>
+            <td class="text-center">{{c[4][0:10]}}</td>
+            <td class="text-center">{{c[5]}}</td>
+            <td class="text-center">{{c[6]}}</td>
+            <td class="text-center" class="text-center">{{c[7]}}</td>
+            <td class="text-center" class="text-center">{{c[8]}}</td>
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+</table>
+</div>
+{% endblock %}

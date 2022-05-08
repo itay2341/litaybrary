@@ -1,0 +1,94 @@
+{% extends "admin.html" %}
+{% block title %}Loans{% endblock %}
+
+<!-- Content -->
+{% block content %}
+<h1 class="display-3 py-2 text-center">My Loans</h1>
+<p class="important">
+<h5 class="display-7 py-2 text-center">{{x}}</h5>
+<div class="container">
+  <div class="accordion accordion-flush shadow" id="accordionFlushExample">
+    <div class="accordion-item border">
+      <h2 class="accordion-header" id="flush-headingOne">
+        <button class="accordion-button collapsed border" type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+          Update
+        </button>
+      </h2>
+      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+        data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <strong>Update the delay of days</strong><br>
+          <form class="row g-3" action="/admin/loans" method="POST">
+            <div class="col-md-4">
+              <label for="validationServer01" class="form-label">customer_id</label>
+              <input type="number" name="customer_id" class="form-control is-valid" id="validationServer01" value="5"
+                required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="validationServer02" class="form-label">book_id</label>
+              <input type="number" name="book_id" class="form-control is-valid" id="validationServer02" value="5"
+                required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="validationServer03" class="form-label">delay_days</label>
+              <input type="number" name="delay_days" class="form-control is-valid" id="validationServer03" value="2341"
+                required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit">Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item border">
+      <h2 class="accordion-header" id="flush-headingTwo">
+        <button class="accordion-button collapsed border" type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+          loans
+        </button>
+      </h2>
+      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+        data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <strong>loans</strong><br>
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th class="text-center">#</th>
+                <th class="text-center">customer_id</th>
+                <th class="text-center">book_id</th>
+                <th class="text-center">date_of_start</th>
+                <th class="text-center">date_of_return</th>
+                <th class="text-center">status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for c in loans %}
+              <tr>
+                <td class="text-center">{{c[0]}}</td>
+                <td class="text-center">{{c[1]}}</td>
+                <td class="text-center">{{c[2]}}</td>
+                <td class="text-center">{{c[3]}}</td>
+                <td class="text-center">{{c[4]}}</td>
+                <td class="text-center">{{c[5]}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

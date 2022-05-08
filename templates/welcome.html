@@ -1,0 +1,211 @@
+{% extends "layout.html" %}
+
+<!-- Head -->
+{% block head %}
+{{ super() }}
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap" rel="stylesheet">
+<style>
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  .nav {
+    font-weight: 800 !important;
+    font-size: 1.5em !important;
+    font-style: oblique !important;
+  }
+
+  .x2 {
+
+    background-color: rgb(220, 156, 78) !important;
+  }
+
+  .color2 {
+    background-color: #794836 !important;
+
+  }
+
+  .color {
+    background-color: #d8d8d8 !important;
+  }
+
+
+  .colorr {
+    background-color: rgb(159, 86, 18) !important;
+  }
+
+  .bold2 {
+    font-size: 2em !important;
+  }
+
+  .home {
+    background: #a33333 !important;
+  }
+
+  .home2 {
+    /* #b33434 */
+    /* #a73535 */
+    background: #a73535 !important;
+  }
+
+  .color-itay {
+    background-color: rgb(163, 106, 36) !important;
+  }
+
+  @media (min-width:500px) {
+    .navstyle {
+      border-radius: 50% !important;
+    }
+  }
+
+  @media (max-width:500px) {
+    .change3 {
+      padding-bottom: 200px !important;
+    }
+
+    .change4 {
+      padding-bottom: 30px !important;
+    }
+  }
+.xy{
+  border-color: #a73535 !important ;
+  
+}
+
+  .clear2 {
+    background: rgb(165, 42, 42);
+    background: linear-gradient(90deg, rgba(165, 42, 42, 0) 0%, rgba(165, 42, 42, 0) 32%);
+  }
+
+</style>
+{% endblock %}
+
+<!-- New Nav -->
+{% block nav %}
+<nav  class="navbar navbar-expand-lg py-3 py-md-0 navbar-dark colorspecial {% block yarin %}{% endblock %}">
+  <div class="container-fluid">
+    <a class="navbar-brand pe-0 pe-md-5" href="/">Sign out</a>
+    {% block drop %}{% endblock %}
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    {% block search %}{% endblock %}
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <form method="post" action="/user/home">
+              <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+              <button class="btn-nav" type="submit">
+                Home
+              </button>
+            </form>
+        </li>
+        <li class="nav-item">
+            <form method="post" action="/user/books">
+              <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+              <button class="btn-nav" type="submit">
+                Books
+              </button>
+            </form>
+        </li>
+        <li class="nav-item">
+            <form method="post" action="/user/myloans">
+              <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+              <button class="btn-nav" type="submit">
+                My loans
+              </button>
+            </form>
+        </li>
+        <li class="nav-item">
+            <form method="post" action="/user/procedures">
+              <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+              <button class="btn-nav" type="submit">
+                Procedures
+              </button>
+            </form>
+        </li>
+        <li class="nav-item">
+            <form method="post" action="/user/details">
+              <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+              <button class="btn-nav" type="submit">
+                Personal Details
+              </button>
+            </form>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{% endblock %}
+
+<!-- Content -->
+{% block content %}
+
+{% block itay %}{% endblock %}
+<div class="container">
+  {{x}}
+</div>
+<main>
+  <div class="container py-4 ">
+    <header class="pb-3 mb-4 border-bottom">
+      <img src="/static/loggo.jpeg" width="100" height="80" class="me-2 bg1" viewBox="0 0 118 94" role="img" alt="itay">
+      </img>
+      <span class="fs-4">Itay's Library</span>
+    </header>
+    <div class="p-5 mb-4 rounded-3  " style="background-image: url(https://wallpaperaccess.com/full/3133075.jpg);">
+      <div class="container-fluid pt-1 text-center text-white ">
+        <div class="container pb-4">
+          <h1 class="display-5 fw-bold change3"
+            style="color: #FFEBC1; font-family: 'Square Peg', cursive; font-size:80px ; height: 80px;  ">L itay's brary
+          </h1>
+        </div>
+        <p class="col-md-12 fs-4 pt-3 " style="color: #FFEBC1;">Recent surges in COVID-19 are placing so many things
+          beyond our control.<br>
+          Education doesn’t need to be one of them. In fact, education is a vital source of stability, comfort and hope
+          for the millions who are grappling with challenges and loss.<br> That is why we established our Library, to
+          support the pepole who are relying on education to help them get through this challenging time.<br> Through
+          the library, we will be able to deploy resources where and when they are needed most, to ensure learning
+          continues for pepole around the globe.</p>
+      </div>
+    </div>
+    <div class="row align-items-md-stretch">
+      <div class="col-md-6 change4">
+        <div class="h-100 p-5 text-white rounded-3 bg-dark">
+          <h2>Books books and books</h2>
+          <p>Nonfiction books, Fiction books, Nostalgic, Philosophy, books about Food and much more...</p>
+          <form method="post" action="/user/books" class="inline">
+            <input type="hidden" name="idCustomer" value="{{idCustomer}}">
+            <button type="submit" class="btn btn-outline-light">
+              See more
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="h-100 p-5 text-white bg-dark rounded-3">
+          <h2>About me</h2>
+          <p>I'm a junior developer with my first project. This website is created to manage books in a library. Enjoy
+            it!<br> You can read more about me here ;)</p>
+            <a  class="btn btn-outline-light" href="/user/about?idCustomer={{idCustomer}}">See more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+<!-- Helper to hide the admin page -->
+{% block x %}
+<li><a href="/user/about?idCustomer={{idCustomer}}">Itay Groer</a></li>
+{% endblock %}

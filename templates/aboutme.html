@@ -1,0 +1,40 @@
+{% extends "welcome.html" %}
+{% block title %}About Me{% endblock %}
+
+<!-- Head -->
+{% block head %}
+{{ super() }}
+<link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/cover/">
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+</style>
+{% endblock %}
+
+<!-- Content -->
+{% block content %}
+<div class="d-flex h-100 text-center text-white bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <main class="px-3 py-5">
+            <h1 class="pb-3">Hey pepole !</h1>
+            <p class="lead pb-3">Read a little for introduction.</p><br>
+                <p class="lead pb-3"> My name is Itay Groer and I'm 24 years old. This is my first project after 2 months from the course (FullStack - Python). </p>
+            <p class="lead pb-3">You are welcome to dive in my web. It's created to be able to manage books at a library.</p>
+            <p class="lead pb-3">Please, let me know if you find something you didn't like, visually or logically...</p>
+            <p class="lead pb-3">"All things are difficult before they are easy"</p>
+        </main>
+    </div>
+</div>
+{% endblock %}
